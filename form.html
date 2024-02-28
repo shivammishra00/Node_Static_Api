@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>getdata</title>
+
+    <script src="./main.js"></script>
+
+</head>
+
+
+<body>
+
+<!-- <p>------------------------------- Step 1 -----------------------------------------</p>  -->
+<!-- <p>------------------------------------------------------------------------------</p>  -->
+
+
+    <h1 style="margin-left: 200px;">form.html page</h1>
+
+    <h2 style="font-size: 25px;">api ka data dom me tbl me dikhega on click par =></h2>
+
+    <input  type="submit" onclick="getApi()"  />
+    <!-- <p>is button ko click karne par api ka data tbl me dikhega</p> -->
+
+    <div id="Empdata" style="height: auto; color: red;"></div>
+
+
+<!-- <p>--------------------------------- Step 2------------------------------------</p>  -->
+<!-- <p>------------------------------------------------------------------------------</p>  -->
+
+
+    <div>
+        <h2 style="font-size: 25px;">Form (input) ka data java Script me send karna =></h2>
+
+       <label >User Name :</label>
+       <input id="uname" type="text" value="" /> <br>
+
+        <label >Password :</label>
+        <input id="pwd" type="password"  value="" style="margin-top: 10px;"/> <br>
+
+        <input type="submit" onclick="userForm()" style="margin-left: 50px; margin-top: 10px;" />
+
+    </div>
+
+
+    <script>
+
+        function userForm(){
+            let username = document.getElementById("uname").value;
+            let password = document.getElementById("pwd").value;
+            console.log(username);
+            console.log(password);
+        }
+        
+    </script>
+
+
+  <!-- <p>--------------------------------- Step 3 -----------------------------------</p>  -->
+  <!-- <p>------------------------------------------------------------------------------</p>  -->
+
+
+    <h2 style="font-size: 25px;">By Salary Filter Karna =></h2>
+
+    <lable>Filter By Salary :</lable>
+    <input id="filterSalary" type="number" value=""/>
+
+    <input type="submit" onclick="filterEmployee()" style="margin-left: 50px;" />
+
+    <div id="filterEmpTbl"  style="height: auto; color: red;"> </div>
+
+
+    <script>
+
+        function filterEmployee(){
+        let salary = parseInt(document.getElementById("filterSalary").value)  // e.target.value
+
+        // console.log(salary)     ///-- agar console.log karege to jo salary input karege 
+                              /// vo chrome me console me dikhega lekin salary type string hogi..
+
+
+        //  console.log(typeof salary)   /// to salary string me hai number me convert karna hoga
+                                         // is liye parsInt ka use kiya hai ...
+
+
+        filterData(salary)  // async function ko yaha par call kar liya argument me input salary 
+                             // pass kiya async function ke para meter me recieve karna padega
+       
+    }
+
+
+        ////-- async function ko yaha call kiya fir usme, jo humne input ki gai salry number me convert kiya hai use argumnt me pass kiya.. ab main file me map function ya loop ke through condition laga sakte hai fiter karne ki......////
+
+    </script>
+    
+
+    
+</body>
+</html>
