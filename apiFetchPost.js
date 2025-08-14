@@ -21,25 +21,27 @@
 
 
 
-//=========================================================================================//
+//=====================================================================================///
 
+
+const apiURL = "http://localhost:5000/postdata";
 
 const data = {
    user: "V",
    city: "Bhopal"
 }
-/////
-const apiURL = "http://localhost:5000/postdata";
-/////
+
+let option = {
+   method: "POST",
+   headers: {
+      "Accept": "application/json",
+      "content-Type": "application/json"
+   },
+   body: JSON.stringify(data)
+}
+
 async function sendData() {
-   let response = await fetch(apiURL, {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-         'Accept':'application/json',
-         "content-Type": "application/json"
-      }
-   })
+   let response = await fetch(apiURL, option)
    let res = await response.json()
    console.log(res)
 }

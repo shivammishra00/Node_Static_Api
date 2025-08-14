@@ -2,14 +2,15 @@
 
 import express from "express";   /////  install kiya fir import kiya.....
 
-//============================================================================================//
+//==================================================================================//
  
                      ////////// ==> step 2    //////////
 
 const app = express();    //// express me http ki all method hoti hai isliye variable me store 
+
                             //// karaya taki sari metjod use kar sake.....
 
-//============================================================================================//
+//===============================================================================//
 
                      ////////// ==> step 6    //////////
 
@@ -18,7 +19,7 @@ app.use(express.json())     ////// .. ye ek middleware hai jab body se data send
                                 /////       or hame dikhta hai. (when we use post method)
 
 
-//============================================================================================//
+//===============================================================================//
 
                 /// ye data hai jo variable me store hai ......
 
@@ -34,7 +35,7 @@ let data = [
 ];
 
 
-//=============================================================================================//
+//===============================================================================//
 
                      ////////// ==> step 3    ///////////
 
@@ -51,7 +52,7 @@ app.get("/displaydata", (req, res)=>{
     // res.json(data)           //// isse json formet data direct show hoga......
 
     // res.json({
-    //     "name": "shivam",         //////yaha data direct send kar diya gaya hai json formet me
+    //     "name": "shivam",  //////yaha data direct send kar diya gaya hai json formet me
     //     "address": "satna"
     // })
 
@@ -77,11 +78,11 @@ app.get("/displaydata", (req, res)=>{
 //=========> URL ke through data send karna means params se data send karna <=========///
           //================================================================//
 
-///------------------- --Tarika 1st => params ke through -------------------------------///
+///-------------------  Tarika 1st => params ke through  --------------------///
                       //-------------------------------//
 
 
-//-- ----params se single data send karna [URL=> http://IP:port/Route/ VariableValue(city)] --//
+//--params se single data send karna [URL=> http://IP:port/Route/VariableValue(city)] --//
 
 app.get("/singleData/:city", (req, res)=>{
     
